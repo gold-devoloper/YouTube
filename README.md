@@ -6,8 +6,7 @@ Step 1. Add the JitPack repository to your build file
 
 Add it in your root settings.gradle at the end of repositories:
 
-
-	  		maven { url 'https://jitpack.io' }
+       maven { url 'https://jitpack.io' }
 
 Step 2. Add the dependency
 
