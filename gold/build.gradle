@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+    }
+
+    sourceSets {
+        main.res.srcDirs = [
+            'src/main/res',
+            'src/main/res-public'
+        ]
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test:runner:$versions.runner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
+
+    api "androidx.annotation:annotation:$versions.androidxAnnotations"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:$versions.androidxLifecycleRuntime"
+
+    implementation "androidx.appcompat:appcompat:$versions.androidxCore"
+    implementation "androidx.recyclerview:recyclerview:$versions.androidxRecyclerView"
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.gold.youtubeplayer'
+    PUBLISH_VERSION = versions.publishVersion_core
+    PUBLISH_ARTIFACT_ID = 'gold'
+    PUBLISH_DESCRIPTION = 'YouTube Player library for Android, stable and customizable.'
+}
+

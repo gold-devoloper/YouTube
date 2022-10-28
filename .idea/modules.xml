@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/YouTube_Player.iml" filepath="$PROJECT_DIR$/.idea/modules/YouTube_Player.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.iml" filepath="$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sample-app/YouTube_Player.gold-sample-app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender-sample-app/YouTube_Player.gold-sender-sample-app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold-sender/YouTube_Player.gold-sender.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.main.iml" filepath="$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/gold/YouTube_Player.gold.unitTest.iml" />
+    </modules>
+  </component>
+</project>

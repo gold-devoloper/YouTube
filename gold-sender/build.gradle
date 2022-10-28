@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion versions.compileSdk
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.compileSdk
+    }
+
+    sourceSets {
+        main.res.srcDirs = [
+            'src/main/res',
+            'src/main/res-public'
+        ]
+    }
+}
+
+dependencies {
+    testImplementation "junit:junit:$versions.junit"
+    androidTestImplementation "androidx.test:runner:$versions.runner"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
+
+    api project(':gold')
+    api "com.google.android.gms:play-services-cast-framework:$versions.googlePlayServicesCastFramework"
+}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.gold.youtubeplayer'
+    PUBLISH_VERSION = versions.publishVersion_gold
+    PUBLISH_ARTIFACT_ID = 'gold-sender'
+    PUBLISH_DESCRIPTION = 'Extension for the android-youtube-player:gold library, that enables Chromecast compatibility.'
+}
