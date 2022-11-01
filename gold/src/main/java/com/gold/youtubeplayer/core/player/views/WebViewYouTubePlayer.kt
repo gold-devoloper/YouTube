@@ -39,7 +39,7 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
     }
 
     override fun onYouTubeIFrameAPIReady() = youTubePlayerInitListener(this)
-
+    override fun hideMoreVideosPopup() = youTubePlayerInitListener(this)
     override fun getInstance(): YouTubePlayer = this
 
     override fun loadVideo(videoId: String, startSeconds: Float) {
@@ -107,7 +107,7 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
         addJavascriptInterface(YouTubePlayerBridge(this), "YouTubePlayerBridge")
 
         val htmlPage = Utils
-                .readHTMLFromUTF8File(resources.openRawResource(R.raw.ayp_youtube_player))
+                .readHTMLFromUTF8File(resources.openRawResource(R.raw.gold_youtube_player))
                 .replace("<<injectedPlayerVars>>", playerOptions.toString())
 
         loadDataWithBaseURL(playerOptions.getOrigin(), htmlPage, "text/html", "utf-8", null)

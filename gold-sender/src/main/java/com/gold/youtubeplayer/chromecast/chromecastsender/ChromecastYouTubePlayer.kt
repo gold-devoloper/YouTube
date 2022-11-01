@@ -29,6 +29,10 @@ class ChromecastYouTubePlayer internal constructor(private val chromecastCommuni
         youTubePlayerInitListener(this)
     }
 
+    override fun hideMoreVideosPopup() {
+        youTubePlayerInitListener(this)
+    }
+
     override fun getInstance(): YouTubePlayer {
         return this
     }

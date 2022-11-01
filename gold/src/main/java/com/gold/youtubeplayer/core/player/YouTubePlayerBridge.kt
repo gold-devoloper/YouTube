@@ -52,11 +52,18 @@ class YouTubePlayerBridge(private val youTubePlayerOwner: YouTubePlayerBridgeCal
         fun getInstance(): YouTubePlayer
         fun getListeners(): Collection<YouTubePlayerListener>
         fun onYouTubeIFrameAPIReady()
+        fun hideMoreVideosPopup()
     }
 
     @JavascriptInterface
     fun sendYouTubeIFrameAPIReady() =
-        mainThreadHandler.post { youTubePlayerOwner.onYouTubeIFrameAPIReady() }
+        mainThreadHandler.post { youTubePlayerOwner.onYouTubeIFrameAPIReady()
+        }
+    @JavascriptInterface
+    fun sendYouTubeIFrameAPIHide() =
+        mainThreadHandler.post { youTubePlayerOwner.hideMoreVideosPopup()
+        }
+
 
     @JavascriptInterface
     fun sendReady() {
