@@ -22,7 +22,7 @@ interface YouTubePlayer {
 
     fun play()
     fun pause()
-
+    fun playNextVideo()
     fun mute()
     fun unMute()
 

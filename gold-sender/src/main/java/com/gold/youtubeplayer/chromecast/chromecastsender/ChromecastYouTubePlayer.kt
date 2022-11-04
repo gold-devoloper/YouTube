@@ -33,6 +33,14 @@ class ChromecastYouTubePlayer internal constructor(private val chromecastCommuni
         youTubePlayerInitListener(this)
     }
 
+    override fun hideVideoTitle() {
+        youTubePlayerInitListener(this)
+    }
+
+    override fun hideCaption() {
+        youTubePlayerInitListener(this)
+    }
+
     override fun getInstance(): YouTubePlayer {
         return this
     }
@@ -72,6 +80,11 @@ class ChromecastYouTubePlayer internal constructor(private val chromecastCommuni
 
         chromecastCommunicationChannel.sendMessage(message)
     }
+
+    override fun playNextVideo() {
+
+    }
+
     override fun mute() {
         val message = JSONUtils.buildFlatJson(
                 "command" to ChromecastCommunicationConstants.MUTE

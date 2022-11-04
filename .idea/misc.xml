@@ -16,6 +16,7 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/activity_no_lifecycle_observer_example.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/activity_player_status_example.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/activity_playlist_example.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/activity_simple_example.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/custom_player_ui.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/empty_layout.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/KUTUBXONALARIM/YouTube Player/gold-sample-app/src/main/res/layout/fragment_view_pager.xml" value="0.23645833333333333" />
@@ -65,6 +66,11 @@
         <entry key="core-sample-app/src/main/res/layout/web_ui_example.xml" value="0.34646739130434784" />
       </map>
     </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="android.webkit.JavascriptInterface" />
+    </list>
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="org.jetbrains.annotations.Nullable" />

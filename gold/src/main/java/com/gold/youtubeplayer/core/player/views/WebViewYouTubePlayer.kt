@@ -40,6 +40,10 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
 
     override fun onYouTubeIFrameAPIReady() = youTubePlayerInitListener(this)
     override fun hideMoreVideosPopup() = youTubePlayerInitListener(this)
+    override fun hideVideoTitle() = youTubePlayerInitListener(this)
+    override fun hideCaption() = youTubePlayerInitListener(this)
+
+
     override fun getInstance(): YouTubePlayer = this
 
     override fun loadVideo(videoId: String, startSeconds: Float) {
@@ -49,7 +53,9 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
     override fun cueVideo(videoId: String, startSeconds: Float) {
         mainThreadHandler.post { loadUrl("javascript:cueVideo('$videoId', $startSeconds)") }
     }
-
+    override fun playNextVideo(){
+        mainThreadHandler.post { loadUrl("javascript:playNextVideo()") }
+    }
     override fun play() {
         mainThreadHandler.post { loadUrl("javascript:playVideo()") }
     }
@@ -100,10 +106,20 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun initWebView(playerOptions: IFramePlayerOptions) {
+
         settings.javaScriptEnabled = true
+        settings.javaScriptCanOpenWindowsAutomatically = true
+        settings.builtInZoomControls = true
+
+        settings.allowFileAccess = true
+        settings.loadsImagesAutomatically = true
+        settings.setSupportMultipleWindows(true)
         settings.mediaPlaybackRequiresUserGesture = false
         settings.cacheMode = WebSettings.LOAD_DEFAULT
-
+        settings.userAgentString = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0"
+        settings.useWideViewPort = true
+        evaluateJavascript("document.querySelector('meta[name=\"viewport\"]').setAttribute('content'," +
+                " 'width=1024px, initial-scale=' + (document.documentElement.clientWidth / 1024));", null)
         addJavascriptInterface(YouTubePlayerBridge(this), "YouTubePlayerBridge")
 
         val htmlPage = Utils
@@ -117,7 +133,7 @@ internal class WebViewYouTubePlayer constructor(context: Context, attrs: Attribu
             override fun getDefaultVideoPoster(): Bitmap? {
                 val result = super.getDefaultVideoPoster()
 
-                return result ?: Bitmap.createBitmap(1, 1, Bitmap.Config.RGB_565)
+                return result ?: Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
             }
         }
     }

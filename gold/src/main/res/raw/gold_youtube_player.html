@@ -40,7 +40,8 @@
     	function onYouTubeIframeAPIReady() {
 
             YouTubePlayerBridge.sendYouTubeIFrameAPIReady();
-
+            YouTubePlayerBridge.sendHideMoreVideosPopup();
+  YouTubePlayerBridge.sendHideVideoTitle();
     		player = new YT.Player('youTubePlayerDOM', {
 
                 height: '100%',
@@ -54,9 +55,20 @@
     				onError: function(error) { YouTubePlayerBridge.sendError(error.data) },
     				onApiChange: function(event) { YouTubePlayerBridge.sendApiChange() }
     			},
-
-    			playerVars: <<injectedPlayerVars>>
-
+                  playerVars: {
+    				'autoplay': 1,
+    				'autohide': 1,
+    				'controls': 1,
+    				'enablejsapi': 1,
+    				'fs': 1,
+    				'origin' : 'https://www.google.com',
+    				'rel': 0,
+    				'modestbranding': 1,
+    				'disablekb': 1,
+    				'start': 1,
+    				'showinfo': 0,
+    				'iv_load_policy': 3
+              }
     		});
     	}
 
@@ -82,6 +94,89 @@
 
             }, 100);
         }
+           function hideVideoTitle() {
+                 setInterval(() => {
+                    const playerIFrame = document.querySelector("iframe");
+
+                   if (!playerIFrame) {
+                     return;
+                   }
+
+                   const frameDoc = playerIFrame.contentDocument;
+
+                   if (!frameDoc) {
+                    return;
+                 }
+
+                 const title = frameDoc.querySelector('.ytp-chrome-top');
+                   if (title) {
+                title.style.display = 'none';
+                }
+               }, 100);
+             }
+                function hideCaption(){
+                     setInterval(() => {
+                         if(!player){
+                            return;
+                          }
+                         player.unloadModule('captions');
+                        },1000);
+                     }
+
+                //To enable captions
+                  function hideCaption(){
+                     if(!player){
+                       return;
+                    }
+                 player.loadModule('captions');
+                }
+    function playNextVideo() {
+    const playerIFrame = document.querySelector("iframe");
+
+    if (!playerIFrame) {
+        return;
+    }
+    const frameDoc = playerIFrame.contentDocument;
+
+    if (!frameDoc) {
+        return;
+    }
+    var nextVideo = frameDoc.querySelectorAll('.ytp-suggestions a')
+    if(!nextVideo){
+    	return;
+    }
+    var video_id = nextVideo[0].href.split('v=')[1];
+    var ampersand = video_id.indexOf('&');
+    if (ampersand != -1) {
+        video_id = video_id.substring(0, ampersand);
+    }
+    player.loadVideoById(video_id, 0);
+}
+
+function hideTabletPopup() {
+
+            setInterval(() => {
+                const playerIFrame = document.querySelector("iframe");
+
+                if (!playerIFrame) {
+                    return;
+                }
+
+                const frameDoc = playerIFrame.contentDocument;
+
+                if (!frameDoc) {
+                    return;
+                }
+
+                 const collection = frameDoc.getElementsByClassName("ytp-pause-overlay-container")[0];
+                  if (!collection) {
+                    return;
+                }
+                 collection.style.display = 'none';
+
+            }, 100);
+        }
+
 
     	function sendPlayerStateChange(playerState) {
             clearTimeout(timerId);
